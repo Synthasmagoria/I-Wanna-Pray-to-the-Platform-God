@@ -1,0 +1,1 @@
+ending_index = ENDING.PLATFORMING;

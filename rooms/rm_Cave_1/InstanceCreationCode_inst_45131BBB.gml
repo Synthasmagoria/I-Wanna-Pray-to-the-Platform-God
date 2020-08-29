@@ -1,0 +1,1 @@
+object = [obj_TriggerSpikeDown, obj_Platform];
