@@ -1,1 +1,0 @@
-ending_index = 0;

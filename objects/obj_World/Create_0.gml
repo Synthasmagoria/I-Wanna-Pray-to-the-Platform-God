@@ -53,6 +53,7 @@ enum BUTTON_WORLD {
 	MENU,
 	QUIT,
 	FULLSCREEN,
+	WINDOW_RESET,
 	SCREENSHOT,
 	NUMBER
 }
@@ -130,6 +131,7 @@ global.button_world = array_create(BUTTON_WORLD.NUMBER);
 global.button_world[BUTTON_WORLD.MENU] = vk_f2;
 global.button_world[BUTTON_WORLD.QUIT] = vk_escape;
 global.button_world[BUTTON_WORLD.FULLSCREEN] = vk_f4;
+global.button_world[BUTTON_WORLD.WINDOW_RESET] = vk_f5;
 global.button_world[BUTTON_WORLD.SCREENSHOT] = vk_f11;
 
 // Default settings
@@ -150,7 +152,7 @@ global.save_default = array_create(SAVE.NUMBER);
 global.save_default[SAVE.X] = 272;
 global.save_default[SAVE.Y] = 360;
 global.save_default[SAVE.ROOM] = rm_Outside_Forest;
-global.save_default[SAVE.ENDING] = 1;
+global.save_default[SAVE.ENDING] = ENDING.PUZZLE;
 
 // Write default buttons & settings to config file if it doesn't exist
 if (!file_exists(CONFIG_FILENAME)) {
@@ -199,7 +201,7 @@ global.game_height = 608;
 global.game_ingame = false; // variable to check if the game is not in the menu
 global.game_playing = false; // variable to check if the game is being played
 global.game_paused = false; // variable to check if the game is paused
-global.game_title = "Platform nog";
+global.game_title = choose("Platform God", "Platform god", "Platform Jod", "Platform jod", "Platform Dog", "Platform dog", "Platform Nog", "Platform nog", "Platform Fog", "Platform fog", "Platform Frog", "Platform frog", "Platefrom God", "Platefrom god", "Pwatform Pog :o", "Pwatform pog :o", "Platform gone...", "Genshin Impact");
 window_set_caption(global.game_title);
 // Player variables
 global.player_depth = 1;
@@ -212,6 +214,14 @@ pause_dim = 0.75;
 // Sound variables
 sound_index = -1;
 sound_id = -1;
+
+// Flag for automatic Window reset (F5)
+broken_fullscreen = false;
+// Plasma smoothing shader stuff
+u_texelsPerPixel = shader_get_uniform(sh_pxUpscale,"u_texelsPerPixel");
+application_surface_draw_enable(false);
+// Time framerate options properly
+display_set_timing_method(tm_sleep);
 
 // Done initializing
 room_goto_next();

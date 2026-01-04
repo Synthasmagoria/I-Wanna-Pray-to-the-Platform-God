@@ -59,6 +59,10 @@ if (read) {
 	
 	file_position++;
 	
+	if (file_position == 16) {
+		audio_play_sound(snd_Idiot, 0, false);
+	}
+	
 	// Format the line to fit within the textbox
 	var pos, pos_prev, pos_max;
 	pos = 0;

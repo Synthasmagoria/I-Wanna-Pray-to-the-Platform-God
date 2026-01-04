@@ -31,12 +31,13 @@ if (keyboard_check_pressed(ord("S")) && instance_exists(obj_Player))
 }*/
 
 // Input
-var buttonRetry, buttonPause, buttonMenu, buttonQuit, buttonFullscreen, buttonScreenshot;
+var buttonRetry, buttonPause, buttonMenu, buttonQuit, buttonFullscreen, buttonWindowReset, buttonScreenshot;
 buttonRetry = keyboard_check_pressed(global.button[BUTTON.RETRY]);
 buttonPause = keyboard_check_pressed(global.button[BUTTON.PAUSE]);
 buttonMenu = keyboard_check_pressed(global.button_world[BUTTON_WORLD.MENU]);
 buttonQuit = keyboard_check_pressed(global.button_world[BUTTON_WORLD.QUIT]);
 buttonFullscreen = keyboard_check_pressed(global.button_world[BUTTON_WORLD.FULLSCREEN]);
+buttonWindowReset = keyboard_check_pressed(global.button_world[BUTTON_WORLD.WINDOW_RESET]);
 buttonScreenshot = keyboard_check_pressed(global.button_world[BUTTON_WORLD.SCREENSHOT]);
 
 if (global.game_playing) {
@@ -58,7 +59,9 @@ if (global.game_playing) {
 	
 	if (!global.game_paused) {
 		// Do time
-		global.save_active[SAVE.TIME] += 1 / global.setting[SETTING.FRAMERATE];
+		if (!global.save_active[SAVE.CLEAR]) {
+			global.save_active[SAVE.TIME] += 1 / global.setting[SETTING.FRAMERATE];
+		}
 		
 		// Retry
 		if (buttonRetry) {
@@ -81,6 +84,8 @@ if (buttonQuit) {
 
 // Fullscreen
 if (buttonFullscreen) {
+	// Only allow fullscreen on the main monitor since it's very broken on this version of GMS2
+	window_center();
 	scr_SettingSet(SETTING.FULLSCREEN, !global.setting[SETTING.FULLSCREEN]);
 	
 	// Set menu text in case of changing fullscreen
@@ -89,7 +94,32 @@ if (buttonFullscreen) {
 	}
 }
 
+// Window reset
+if (buttonWindowReset || window_has_focus() && broken_fullscreen) {
+	broken_fullscreen = false;
+	
+	scr_SettingSet(SETTING.FULLSCREEN, false);
+	
+	// Set menu text in case of changing fullscreen
+	if (instance_exists(obj_Menu)) {
+		obj_Menu.setting[0] = "false";
+	}
+	
+	window_set_size(800, 608);
+}
+if (window_get_fullscreen() && (!window_has_focus() || keyboard_check_released(91) || keyboard_check_released(92))) {
+	// Set flag if window gets minimized or Windows Key is released while in fullscreen to prevent it from going back to a broken state
+	broken_fullscreen = true;
+}
+
 // Screenshot
 if (buttonScreenshot) {
-	screen_save("screenshot_" + string(irandom(32000)) + ".png");
+	var date = date_current_datetime();
+	screen_save("screenshot_" + string(date_get_year(date)) +
+	"-" + string_replace(string_format(date_get_month(date), 2, 0), " ", "0") +
+	"-" + string_replace(string_format(date_get_day(date), 2, 0), " ", "0") +
+	"-" + string_replace(string_format(date_get_hour(date), 2, 0), " ", "0") +
+	"-" + string_replace(string_format(date_get_minute(date), 2, 0), " ", "0") +
+	"-" + string_replace(string_format(date_get_second(date), 2, 0), " ", "0") +
+	".png");
 }

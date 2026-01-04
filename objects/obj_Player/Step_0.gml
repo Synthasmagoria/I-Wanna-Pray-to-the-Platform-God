@@ -19,8 +19,8 @@ facing = running ? orientation : facing;
 var platform = collision_rectangle(
 	bbox_left,
 	bbox_top,
-	bbox_right,
-	bbox_bottom + max(vs, 1) + (y - floor(y)),
+	x + 5,
+	y + 8 + max(vs, 1) + (y - floor(y)),
 	obj_Platform,
 	false,
 	false
@@ -35,7 +35,7 @@ if (platform) {
 	hs += platform.hspeed;
 	
 	if (y < platform.y && 
-		!(bbox_bottom < platform.y && vs < platform.vspeed) &&
+		!(y + 8 < platform.y && vs < platform.vspeed) &&
 		!place_meeting(x, platform.y - hitbox_y2 - 1, obj_Block)
 	) {
 		y = platform.y - hitbox_y2 - 1;
@@ -97,7 +97,8 @@ if (place_meeting(x + hs, y + vs, obj_Block)) {
 	
 	block = instance_place(x + hs, y, obj_Block);
 	if (block) {
-		x = hs < 0 ? block.bbox_right - hitbox_x1 + 1 : block.bbox_left - hitbox_x2 - 1;
+		var pushback = frac(hs) == 0 ? 1 : 0.5;
+		x = hs < 0 ? block.bbox_right - hitbox_x1 + pushback : block.bbox_left - hitbox_x2 - pushback;
 		hs = 0;
 	} else {
 		x += hs;

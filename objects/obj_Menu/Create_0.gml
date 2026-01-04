@@ -46,7 +46,7 @@ arrow_width = string_length(arrow) * font_width + arrow_space;
 
 // Menu titles
 menu = array_create(menu_number, "");
-menu[menu_sub_main] = "Platform God v111";
+menu[menu_sub_main] = "Platform God v112";
 menu[menu_sub_save] = "Select Save";
 menu[menu_sub_start] = "Game";
 menu[menu_sub_overwrite] = "Overwrite save?";
@@ -89,12 +89,14 @@ option[menu_sub_buttons,9] = "Set defaults";
 option[menu_sub_buttons,10] = "Menu:";
 option[menu_sub_buttons,11] = "Quit:";
 option[menu_sub_buttons,12] = "Fullscreen:";
-option[menu_sub_buttons,13] = "Screenshot:";
+option[menu_sub_buttons,13] = "Window reset:";
+option[menu_sub_buttons,14] = "Screenshot:";
 
 option_color[menu_sub_buttons,10] = c_gray;
 option_color[menu_sub_buttons,11] = c_gray;
 option_color[menu_sub_buttons,12] = c_gray;
 option_color[menu_sub_buttons,13] = c_gray;
+option_color[menu_sub_buttons,14] = c_gray;
 
 // Save string array
 save_value_number = 4;
@@ -116,7 +118,7 @@ setting[3] = string(global.setting[SETTING.SOUND]);
 setting_music_change = 0.1;
 setting_sound_change = 0.1;
 
-setting_framerate = [50, 60, 75, 90, 100, 120, 144, 150, 200];
+setting_framerate = [50, 60, 75, 90, 100, 120, 144, 150, 165, 170, 180, 200, 240];
 setting_framerate_index = 0;
 setting_framerate_number = array_length_1d(setting_framerate);
 
@@ -139,7 +141,8 @@ button[8] = scr_ButtonString(global.button[BUTTON.SUICIDE]);
 button[10] = scr_ButtonString(global.button_world[BUTTON_WORLD.MENU]);
 button[11] = scr_ButtonString(global.button_world[BUTTON_WORLD.QUIT]);
 button[12] = scr_ButtonString(global.button_world[BUTTON_WORLD.FULLSCREEN]);
-button[13] = scr_ButtonString(global.button_world[BUTTON_WORLD.SCREENSHOT]);
+button[13] = scr_ButtonString(global.button_world[BUTTON_WORLD.WINDOW_RESET]);
+button[14] = scr_ButtonString(global.button_world[BUTTON_WORLD.SCREENSHOT]);
 #endregion
 
 // Get the maximum option width to draw the menu more easily

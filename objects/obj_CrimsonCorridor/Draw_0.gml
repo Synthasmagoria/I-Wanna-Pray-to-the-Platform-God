@@ -37,6 +37,7 @@ if (!srf_exists || surface_redraw) {
 	surface_redraw = false;
 	
 	surface_set_target(surface);
+	draw_clear_alpha(c_white, 0.0);
 	var timeUni = shader_get_uniform(shader, shader_time_uniform_name);
 	shader_set(shader);
 	shader_set_uniform_f(timeUni, shader_time);
