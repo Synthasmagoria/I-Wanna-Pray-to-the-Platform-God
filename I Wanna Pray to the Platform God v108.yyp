@@ -495,6 +495,14 @@
             }
         },
         {
+            "Key": "26ecbe7f-95e8-4d94-9129-8e32ab3e9a1d",
+            "Value": {
+                "id": "2ccf568f-1672-4bd9-9b15-199fa6451262",
+                "resourcePath": "extensions\\GMSched\\GMSched.yy",
+                "resourceType": "GMExtension"
+            }
+        },
+        {
             "Key": "27501eb9-40ff-427e-a5d0-bb0e047bf99a",
             "Value": {
                 "id": "061b44ac-d7ae-4e56-a7eb-d02b2104ba31",
@@ -1031,6 +1039,14 @@
             }
         },
         {
+            "Key": "5e50e1ab-2078-4c3f-a6dc-4f0f1e56cb5b",
+            "Value": {
+                "id": "4971f411-1e94-43e6-b5e4-4d48c7becb28",
+                "resourcePath": "sounds\\snd_Idiot\\snd_Idiot.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "5eb793f8-7efe-431e-bd8e-f53b7deef66b",
             "Value": {
                 "id": "d1708ceb-7c5b-4837-8d3c-dfbf36e7b37f",
@@ -1231,6 +1247,14 @@
             }
         },
         {
+            "Key": "75ac291e-7061-4bcb-8e8a-3b3545332d41",
+            "Value": {
+                "id": "d2e933eb-7dc1-4f5a-8f33-8cd25bdc020c",
+                "resourcePath": "options\\html5\\options_html5.yy",
+                "resourceType": "GMHtml5Options"
+            }
+        },
+        {
             "Key": "75ba127a-14de-4933-94db-8a76e256ca52",
             "Value": {
                 "id": "c2ce483e-35bc-4711-be08-89b5c9618db2",
@@ -1391,6 +1415,14 @@
             }
         },
         {
+            "Key": "8427047f-9ef8-4c77-89f3-9c20623d07b6",
+            "Value": {
+                "id": "ddbe8190-a3cc-4ca8-b4f7-7d780acf24f4",
+                "resourcePath": "options\\ios\\options_ios.yy",
+                "resourceType": "GMiOSOptions"
+            }
+        },
+        {
             "Key": "84c1b981-d712-46b1-9450-60f2c49aea0f",
             "Value": {
                 "id": "8b48a22e-d97f-4e22-9e4c-a9ea911f3998",
@@ -1428,6 +1460,14 @@
                 "id": "4f7005f6-becd-4715-96a9-1d3479f6c422",
                 "resourcePath": "views\\86dd3076-17ac-471f-91fe-a9a18af966f4.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "87a5d4f7-8f0f-4404-bba2-30f64564c583",
+            "Value": {
+                "id": "4ad42132-5ffc-497c-ad5d-0f7e9e559da7",
+                "resourcePath": "objects\\obj_IdiotDetector\\obj_IdiotDetector.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1559,6 +1599,14 @@
             }
         },
         {
+            "Key": "93566aad-c3b3-48a9-8fa7-9c5ee19f74ac",
+            "Value": {
+                "id": "03558783-3317-4b59-ac73-0fb3eed13271",
+                "resourcePath": "options\\tvos\\options_tvos.yy",
+                "resourceType": "GMtvOSOptions"
+            }
+        },
+        {
             "Key": "93a0336e-8ce0-4f71-8a14-69905a3482d9",
             "Value": {
                 "id": "198adb9f-bc80-42ec-b542-87fed72a65ac",
@@ -1684,6 +1732,14 @@
                 "id": "a1ff7e4e-7b1b-4cf2-ba83-1dec1a9986dd",
                 "resourcePath": "objects\\obj_Warp\\obj_Warp.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "9f7cf54e-d9a1-4fd0-af4a-ab90515138b5",
+            "Value": {
+                "id": "93dfb347-b95d-421e-a073-5f33c5c490b1",
+                "resourcePath": "sprites\\spr_SpikeLeftWaterDropNerfedMask\\spr_SpikeLeftWaterDropNerfedMask.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1844,6 +1900,14 @@
                 "id": "d1014037-5fb4-4cbf-9e08-37f5a7df02fa",
                 "resourcePath": "sounds\\snd_Shoot\\snd_Shoot.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "aea80da7-e1a2-4889-bb74-49adec6ecb8b",
+            "Value": {
+                "id": "0d36ad8e-0322-403f-9675-4dc3a33b479d",
+                "resourcePath": "shaders\\sh_pxUpscale\\sh_pxUpscale.yy",
+                "resourceType": "GMShader"
             }
         },
         {
@@ -2348,6 +2412,14 @@
                 "id": "47af5111-0cef-4842-a269-af4141a1bd0e",
                 "resourcePath": "sprites\\spr_CherryDarkPurple\\spr_CherryDarkPurple.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
+            "Value": {
+                "id": "bba81ec2-3b3a-4276-a281-a43e1f538ea4",
+                "resourcePath": "options\\android\\options_android.yy",
+                "resourceType": "GMAndroidOptions"
             }
         },
         {

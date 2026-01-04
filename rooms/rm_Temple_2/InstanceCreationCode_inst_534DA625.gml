@@ -1,1 +1,1 @@
-vs_touch = 9;
+vs_touch = 9.4;

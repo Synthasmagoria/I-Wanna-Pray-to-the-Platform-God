@@ -11,7 +11,8 @@
         "12204940-04af-48ef-9ccf-df1d236f3ac1",
         "d3264c4b-b70f-4d48-bafe-9b691030956a",
         "e27a107f-b860-4a43-a22d-3b1103498997",
-        "2216e052-d05f-4920-98f7-e8eedea520d5"
+        "2216e052-d05f-4920-98f7-e8eedea520d5",
+        "9f7cf54e-d9a1-4fd0-af4a-ab90515138b5"
     ],
     "filterType": "GMSprite",
     "folderName": "Killers",

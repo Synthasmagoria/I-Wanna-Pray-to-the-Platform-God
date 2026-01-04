@@ -21,6 +21,7 @@ if (!touched && collision_circle(x, y, circle_radius, obj_Player, false, false))
 		if (audio_is_playing(sound_id)) {
 			audio_stop_sound(sound_id);
 		}
+		sound_id = -1;
 	}
 	
 	audio_play_sound(mus_Pray, 0, false);

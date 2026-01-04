@@ -1,1 +1,1 @@
-object = [obj_PlatformTouchBounce, obj_TriggerSpikeLeft];
+object = [obj_TriggerPlatformTouch, obj_TriggerSpikeLeft];

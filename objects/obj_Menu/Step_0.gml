@@ -127,10 +127,18 @@ if (button_changing) {
 				
 				case 4: // restore default settings
 				scr_SettingSetDefault();
+				window_set_size(800, 608);
 				setting[0] = global.setting[SETTING.FULLSCREEN] ? "true" : "false";
 				setting[1] = string(global.setting[SETTING.FRAMERATE]);
+				setting_framerate_index = 0;
+				while (setting_framerate[setting_framerate_index] < global.setting[SETTING.FRAMERATE]) {
+					setting_framerate_index++;
+				}
 				setting[2] = string(global.setting[SETTING.MUSIC]);
 				setting[3] = string(global.setting[SETTING.SOUND]);
+				with (obj_Vortex) {
+					time_incr = 1 / game_get_speed(gamespeed_fps);
+				}
 				break;
 			}
 			break;
@@ -201,6 +209,9 @@ if (button_changing) {
 				setting_framerate_index = clamp(setting_framerate_index + buttonRight - buttonLeft, 0, setting_framerate_number - 1);
 				scr_SettingSet(SETTING.FRAMERATE, setting_framerate[setting_framerate_index]);
 				setting[SETTING.FRAMERATE] = string(global.setting[SETTING.FRAMERATE]);
+				with (obj_Vortex) {
+					time_incr = 1 / game_get_speed(gamespeed_fps);
+				}
 				break;
 				
 				case 2: // set music volume

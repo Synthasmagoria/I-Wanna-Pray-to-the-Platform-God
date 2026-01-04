@@ -1,1 +1,1 @@
-object = [obj_TriggerSpikeDown, obj_PlatformTouch];
+object = [obj_TriggerSpikeDown, obj_TriggerPlatformTouch];

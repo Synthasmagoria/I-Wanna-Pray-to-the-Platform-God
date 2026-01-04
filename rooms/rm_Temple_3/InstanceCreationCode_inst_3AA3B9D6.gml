@@ -1,1 +1,1 @@
-object = obj_Platform;
+object = obj_PlatformTouchBounce;

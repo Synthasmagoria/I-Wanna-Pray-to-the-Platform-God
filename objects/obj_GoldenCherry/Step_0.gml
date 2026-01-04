@@ -5,6 +5,7 @@ if (!following && place_meeting(x, y, obj_Player)) {
 	instance_destroy(obj_Save);
 	global.save_active[SAVE.CHERRY] = true;
 	global.save_active[SAVE.SEED] = irandom(power(2, 15));
+	global.save_active[SAVE.ENDING] = ENDING.PUZZLE;
 }
 
 if (following) {
